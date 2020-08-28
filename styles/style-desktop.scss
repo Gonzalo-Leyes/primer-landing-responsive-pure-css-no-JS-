@@ -1,0 +1,264 @@
+$padding-desk:200px;
+
+@media screen and (min-width: 841px) {
+
+    %fontstyle-title-desktop {
+        /*Estilo para Títulos*/
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 48px;
+        color: #060A24;
+        letter-spacing: 0;
+        font-weight: normal;
+    }
+    
+    %fontstyle-info-desktop {
+        /*Estilo para textos informativos o detalles*/
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 16px;
+        color: #060a24;
+        letter-spacing: 0;
+        line-height: 24px;
+        font-weight: normal;
+    }
+
+    %redir-button {
+        /*boton de redireccionamiento + hover al anchor */
+        text-align: center;
+        position: relative;
+        height: 56px;
+        width: 226px;
+        line-height: 56px;
+        text-transform: uppercase;
+        background-color:#00F3BB;
+        margin-top: 28px;
+        @extend %fontstyle-info-desktop;
+        font-size: 16px;
+        font-weight: 500;
+        a {
+            color:#060A24;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left:0px;
+            &:hover {
+                cursor: hand;
+                cursor: pointer;
+                background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+                color: #ffffff;
+                transition: .5s all ease-in-out;        
+            }
+        }
+        
+
+    }
+
+    .nav-container { 
+        display: flex;
+        flex-direction: row;
+        margin: 26px 100px;
+        justify-content: space-between;
+        background-color: #FFFFFF;
+    
+        .nav-logo {
+            width: 36px;
+        }
+        .nav-bars {
+            display: none;
+        }
+        .nav-itemlist-mob {
+            display: none;
+        }
+        .nav-itemlist-desk {
+            padding-bottom: 60px;
+            list-style: none;
+            li {
+                display: inline;
+            }
+            
+            a {
+                @extend %fontstyle-info-desktop;
+                line-height: 28px;
+                padding: 0px 24px;
+                text-transform: uppercase;
+                transition: .2s all ease-in-out;
+                &:hover {
+                    color: #00F3BB;
+                    text-decoration: line-through;        
+                }
+                &:active {
+                    text-decoration: line-through;
+                    color: #060A24 56%;
+                }
+            }
+        }
+    }
+    .main-title-container {
+        padding: 60px $padding-desk;
+        
+        .main-titles {
+            @extend %fontstyle-title-desktop;
+            em {
+                font-style: normal;
+                text-decoration: line-through;
+            }
+            span {
+                color: #0000EC;
+            }
+        }
+        .main-intro-mob{
+            display:none;
+        }
+        .main-intro-desk {
+            @extend %fontstyle-info-desktop;
+            padding-bottom: 28px;
+        }
+        .main-button {
+            @extend %redir-button;
+             
+        }
+    }
+
+    .skewed-box {
+        background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+        z-index: -1;
+        transform: skewY(-5deg);
+        padding: 186px 0px $padding-desk;
+    
+        .episodes-container {
+            transform: skewY(5deg);
+        }
+        .title-episode {
+            @extend %fontstyle-title-desktop;
+            color: #FFFFFF;
+            padding: 0px $padding-desk 26px;
+        }
+        .iframes {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            iframe {
+                width: 584px;
+                height: 232px;
+                padding: 0px 36px 72px;
+            }
+        }
+    }
+
+    .us-section-container {
+        display: flex;
+        flex-flow: row wrap;
+        margin-bottom: -110px;
+
+        .phone-images {
+            z-index: 1;
+            margin-left: $padding-desk;
+            width: 457px;
+            transform: translateY(-110px);
+        }
+        .phonepng {
+            width: 100%;
+        }
+        .us-container {
+            padding: 100px 62px 64px;
+
+            h2 {
+                @extend %fontstyle-title-desktop;
+                padding-bottom: 24px;
+            }
+
+            p {
+                @extend %fontstyle-info-desktop;
+                width: 464px;
+            }
+        }
+    }
+    .interview-container {
+
+        h2 {
+            @extend %fontstyle-title-desktop;
+            padding: 64px $padding-desk 36px;
+        }
+        .photo-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+            grid-template-rows: repeat(2, 1fr);
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .topic-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        h2 {
+            @extend %fontstyle-title-desktop;
+            width: 100%;
+            margin: 64px $padding-desk 34px;
+
+        }
+        .topic-box {
+            margin: 69px 20px 66px;
+            text-align: center;
+            width: 220px;
+
+            .topic-title {
+                font-family:'IBM Plex Sans', sans-serif;
+                font-size: 24px;
+                color: #060A24;
+                letter-spacing: 0;
+                padding-top: 29px;
+            }
+        }
+    }
+    
+    .footer-container {
+        background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 60px;
+        clip-path: polygon(0 8vw, 100% 0, 100% 100%, 0% 100%);
+        svg {
+            width: 100vw;
+            height: 200px;
+            
+        }
+        h2 {
+            @extend %fontstyle-title-desktop;
+            color: #ffffff;
+        }
+    
+        .go-button {
+            @extend %redir-button;
+            padding: 0px 20px;
+        }
+    }
+    .footer-end {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+
+        p {
+            @extend %fontstyle-info-desktop;
+            margin: 36px 0px 31px 0px;
+        }
+    
+        .social-icons {
+            svg {
+                padding: 0px 16px;
+            }
+            a {
+                color: #000000;
+            }
+        }
+    }
+    
+
+}
